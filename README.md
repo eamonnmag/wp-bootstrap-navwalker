@@ -1,7 +1,7 @@
-wp-bootstrap-navwalker
+wp-bootstrap-navwalker and wp-materialise-navwalker
 ======================
 
-**A custom WordPress nav walker class to fully implement the Bootstrap 3.0+ navigation style in a custom theme using the WordPress built in menu manager.**
+**A custom WordPress nav walker class to fully implement the Bootstrap 3.0+ and MaterialiseCSS navigation styles in a custom theme using the WordPress built in menu manager.**
 
 ![Extras](http://edwardmcintyre.com/pub/github/navwalker-3-menu.jpg)
 
@@ -19,13 +19,13 @@ This is a utility class that is intended to format your WordPress theme menu wit
 
 Installation
 ------------
-Place **wp_bootstrap_navwalker.php** in your WordPress theme folder `/wp-content/your-theme/`
+Place **wp_bootstrap_navwalker.php** or **wp_materialise_navwalker.php** in your WordPress theme folder `/wp-content/your-theme/`depending on framework you use.
 
 Open your WordPress themes **functions.php** file  `/wp-content/your-theme/functions.php` and add the following code:
 
 ```php
 // Register Custom Navigation Walker
-require_once('wp_bootstrap_navwalker.php');
+require_once('wp_<bootstrap|materialise>_navwalker.php');
 ```
 
 Usage
@@ -46,6 +46,23 @@ Update your `wp_nav_menu()` function in `header.php` to use the new walker by ad
                 'walker'            => new wp_bootstrap_navwalker())
             );
         ?>
+```
+
+This code below is sufficient for MaterialiseCSS.
+
+```php
+
+ <?php /* Primary navigation */
+                        wp_nav_menu( array(
+                          'menu' => 'top_menu',
+                          'depth' => 2,
+                          'container' => false,
+                          'menu_class' => 'right hide-on-med-and-down',
+                          //Process nav menu using our custom nav walker
+                          'walker' => new wp_materialise_navwalker())
+                        );
+?>
+
 ```
 
 Your menu will now be formatted with the correct syntax and classes to implement Bootstrap dropdown navigation. 
