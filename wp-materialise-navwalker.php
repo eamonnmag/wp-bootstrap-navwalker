@@ -4,7 +4,7 @@
  * Class Name: wp_materialise_navwalker
  * GitHub URI: https://github.com/eamonnmag/wp-bootstrap-navwalker
  * Description: A custom WordPress nav walker class to implement the MaterialiseCSS navigation style in a custom theme using the WordPress built in menu manager.
-                Modifed from https://github.com/twittem/wp-bootstrap-navwalker
+ *               Modifed from https://github.com/twittem/wp-bootstrap-navwalker
  * Version: 0.1
  * Author: Edward McIntyre - @twittem. Modified by Eamonn Maguire.
  * License: GPL-2.0+
